@@ -1,0 +1,74 @@
+\documentclass[a4paper,11pt,final]{report}
+
+\usepackage[english]{babel}
+\usepackage[table]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{todonotes}
+\usepackage{amsthm}
+\usepackage{floatrow}
+\usepackage[export]{adjustbox}[2011/08/13]
+\usepackage[toc,page]{appendix}
+\usepackage{dcolumn}
+\usepackage{tabu}
+\usepackage{booktabs}
+\usepackage{bookmark,hyperref}
+\usepackage{subcaption}
+\usepackage{lscape}
+\usepackage{multirow}
+\usepackage{textcomp}
+\DeclareCaptionSubType*[Alph]{table}
+\DeclareCaptionLabelFormat{mystyle}{Table~\bothIfFirst{#1}{ }#2}
+\captionsetup[subtable]{labelformat=mystyle}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist
+
+\newcommand{\reportsubject}{Master Thesis}
+\newcommand{\reporttitle}{Deep Learning architectures in semantic segmentation for aerial views}
+\newcommand{\reportauthor}{Pierre \textsc{Ecarlat}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\setlength{\parskip}{1ex}
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+
+\hypersetup{
+    pdftitle={\reporttitle},%
+    pdfauthor={\reportauthor},%
+    pdfsubject={\reportsubject},%
+    pdfkeywords={rapport} {key} {words}
+}
+
+\begin{document}
+  \pagestyle{empty}
+    \include{title}         \pagebreak
+    \newpage
+    \strut
+    \include{thanks}	       \pagebreak
+    \newpage
+    \include{abstract}      \pagebreak
+    \tableofcontents
+    \todo{find out how to put conclusion as section in contents}
+    \sloppy
+  \pagestyle{headings}
+  
+  \include{synopsis} 	  \pagebreak
+  \include{resume}        \pagebreak
+  
+  \include{intro}         \pagebreak
+  \include{part1}         \pagebreak
+  \include{part2}         \pagebreak
+  \include{part3}         \pagebreak
+  \include{part4}         \pagebreak
+  \include{part5}         \pagebreak
+  
+  \bookmarksetup{startatroot}
+  \include{concl}         \pagebreak
+  \bibliographystyle{abbrv}
+  \bibliography{bibli}
+  \include{appendices}
+\end{document}
+
